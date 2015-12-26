@@ -1,0 +1,33 @@
+@font-face { font-family:"Myriad Pro"; src: url('MyriadPro-Regular.otf'); }
+@font-face { font-family:"Myriad Pro"; font-weight: bold; src: url('MyriadPro-Bold.otf'); }
+
+
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 580px;
+	position:relative;
+	max-width:640px;
+	background:#f2f2f2;
+	min-height: 100% !important;
+	min-height: auto;
+	border: none;
+	overflow:hidden;
+	-webkit-user-select:none;
+		-moz-user-select:none;
+	cursor:default;	
+}
+
+body {
+	font-family:Arial, Helvetica;
+	font-size:13px;
+}
+
+.buttons.footer {
+	position:absolute;
+	bottom:0;
+	margin-bottom:-35px;
+}

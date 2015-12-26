@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PAYPAY - Прием платежей</title>
+    <link href="_css/style.css" rel="stylesheet" type="text/css" />
+    <script src="_js/jquery.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" type="text/css" href="_assets/flipclock/flipclock.css"/>
+    <link rel="stylesheet" type="text/css" href="_assets/flipclock/flipclock_white.css"/>
+    <script type="text/javascript" src="_assets/flipclock/flipclock.min.js"></script>
+	<script type="text/javascript" src="_assets/flipclock/twentyfourhourclock.js"></script>
+<body>
+    
+    <!---- HEADER ---->
+    
+    <header>
+    
+    	<a class="logo" href="#index.html"></a>
+    
+        <button class="nobut but-info"><i class="icon info"></i><br />Информация</button>
+        <button class="nobut but-help"><i class="icon help"></i><br />Помощь</button>
+        
+        <clock></clock>
+        <date id="clock-date">23 августа, 2013г.</date>
+       
+    
+    </header>
+    
+    <div class="clear"></div>
+    
+    
+    <!---- BODY ---->
+    
+    <main>
+    
+    
+    	<scene id="welcome" class="center">
+        	<button onclick="$('#welcome').toggleClass('show'); $('#scan').toggleClass('show'); $('keyboard').hide(); $('.barcode-scanner-dialog').show();" style="text-align:left;">
+            	<span>Введите номер<br />
+				счета</span> <i class="icon enter-button"></i>
+            </button>
+            <vl></vl>
+            <button onclick="$('#welcome').toggleClass('show'); $('#scan').toggleClass('show'); $('keyboard').hide(); $('.barcode-scanner-dialog').show();" style="text-align:right;">
+            	<i class="icon barcode-scanner"></i>
+                <span style="float:right;">поднесите<br />
+            	штрих код к сканеру</span>
+            </button>
+        </scene>
+        
+        <scene id="scan" class="show scanner center">
+        
+	        <div class="barcode-scanner-dialog">
+            	<h2>Поднесите штрих-код к сканеру</h2>
+            
+                <div class="barcode-scanner">
+                    <div class="barcode-line"></div>
+                </div>
+            </div>
+        
+            <h2>Не получается? Тогда введите номер квитанции</h2>
+            
+            <searcher>
+                <input type="text" value="ABC002 NN14 QWE5437" onclick="$('.barcode-scanner-dialog').slideUp('slow'); $('#scan').toggleClass('scanner'); $('keyboard').fadeIn();"/><button onclick="$('searcher hint').fadeIn();" class="but-input-clear"><i class="icon input-clear"></i>стереть</button>
+                <br />
+                <hint class="hide">Этот Счет уже оплачен :)</hint>
+            </searcher>
+            
+            
+            <keyboard class="hide">
+            
+                <button class="but-num">1</button>
+                <button class="but-num">2</button>
+                <button class="but-num">3</button>
+                <button class="but-num">4</button>
+                <button class="but-num">5</button>
+                <button class="but-num">6</button>
+                <button class="but-num">7</button>
+                <button class="but-num">8</button>
+                <button class="but-num">9</button>
+                <button class="but-num">0</button>
+                
+                <br />
+        
+                <button>Q</button>
+                <button>W</button>
+                <button>E</button>
+                <button>R</button>
+                <button>T</button>
+                <button>Y</button>
+                <button>U</button>
+                <button>I</button>
+                <button>O</button>
+                <button>P</button>
+                
+                <br />
+                
+                <button>A</button>
+                <button>S</button>
+                <button>D</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+        
+                <br />
+                
+                <button>Z</button>
+                <button>X</button>
+                <button>C</button>
+                <button>V</button>
+                <button>B</button>
+                <button>N</button>
+                <button>M</button>
+                <button class="but-keyboard-enter" onclick="$('#scan').toggleClass('show'); $('#scan-result').toggleClass('show');"><i class="icon enter"></i><cap>Enter</cap></button>
+                
+                <br />
+                
+                <button class="nobut but-keyboard-hide"><cap>Hide</cap></button>
+        
+                
+             </keyboard>
+         
+         </scene>
+         
+         <scene id="scan-result">
+            
+            <h2>Проверьте данные. Если все верно — нажмите «Продолжить»</h2>
+            
+            <div class="raspiska-input">
+                <dl>
+                    <dt>Номер расписки</dt>
+                    <dd>002001167540</dd>
+                
+                    <dt>ФИО плательщика</dt>
+                    <dd>БУРМАГАНОВ ДИДАР АСЫЛБЕКОВИЧ</dd>
+                </dl>
+                
+                <dl>
+                    <dt>Код налогового органа</dt>
+                    <dd>6202</dd>
+                
+                    <dt>ИИН\БИН</dt>
+                    <dd>900112351369</dd>
+                </dl>
+            </div>
+            
+            <div class="raspiska-resultlist">
+            
+                <div class="raspiska">
+                    <dl>
+                        <dt>Услуга №</dt>
+                        <dd>1</dd>
+                    
+                        <dt>Номер счет-заявки</dt>
+                        <dd>CC135H1HD8GD</dd>
+                        
+                        <dt>Наименование услуги (КБК)</dt>
+                        <dd>108111 Государственная пошлина, взимаемая за выдачу документов, удостоверяющих личность</dd>
+                        
+                        <dt>Код назначения платежа</dt>
+                        <dd>991 Поступления по обязательствам в бюджет от физических лиц-граждан</dd>
+                        
+                        <dt>Сумма</dt>
+                        <dd>400 тенге</dd>
+                        
+                        <dt>Номер счет-заявки</dt>
+                        <dd>900112351369</dd>
+                    </dl>
+                </div>
+            
+                <button class="nobut but-arrow-right"><i class="icon next"></i><cap>Next</cap></button>
+                
+                <div class="raspiska">
+                    <dl>
+                        <dt>Услуга №</dt>
+                        <dd>1</dd>
+                    
+                        <dt>Номер счет-заявки</dt>
+                        <dd>CC135H1HD8GD</dd>
+                        
+                        <dt>Наименование услуги (КБК)</dt>
+                        <dd>108111 Государственная пошлина, взимаемая за выдачу документов, удостоверяющих личность</dd>
+                        
+                        <dt>Код назначения платежа</dt>
+                        <dd>991 Поступления по обязательствам в бюджет от физических лиц-граждан</dd>
+                        
+                        <dt>Сумма</dt>
+                        <dd>400 тенге</dd>
+                        
+                        <dt>Номер счет-заявки</dt>
+                        <dd>900112351369</dd>
+                    </dl>
+                </div>
+            
+            </div>
+    
+            <button class="but-red" onclick="$('#scan-result').toggleClass('show'); $('#scan').toggleClass('show');">Отменить</button>
+            <button class="but-green arrow right" onclick="$('#scan-result').toggleClass('show'); $('#pay').toggleClass('show');">Продолжить</button>
+    
+            
+        </scene>
+        
+        <scene id="pay">
+        
+            <div class="pay-cashin">
+            
+	            <h2>Взнос наличных</h2>
+                
+                <br />
+
+                Нужно для оплаты: <b>850</b> тенге
+                
+                <div class="cashin-amount">
+                    Внесенно:<br />
+					<b>2 000</b><sub>тг</sub>
+                </div>
+        
+                Комиссия: <b>30</b> тенге<br />
+                Сдача: <b>1120</b> тенге<br />
+                <br />
+                
+                <div class="buttons">
+                    <button class="but-red" onclick="$('#pay').toggleClass('show'); $('#scan').toggleClass('show');">Отменить</button>
+                    <button class="but-green arrow right" onclick="$('#pay').toggleClass('show'); $('#cheque').toggleClass('show');">Оплатить</button>
+                </div>
+
+            </div>
+                   
+            <div class="pay-mobile">
+                <h2 style="color:#fed700">Терминал сдачи не выдает!</h2>
+                Предлагаем вам пополнить баланс :)
+                
+                <br /><br />
+
+                <searcher style="width:400px;">
+                    <input type="text" value="+7 777 900 50 00"/><button class="but-input-clear"><i class="icon input-clear"></i>стереть</button>
+                    
+                    <br />
+                    
+                    <hint>Такого номера не существует :)</hint>
+                    
+                </searcher>
+                
+                
+                <keyboard>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    
+                    <br />
+    
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    
+                    <br />
+    
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    
+                    <br />
+    
+                    <button>0</button>
+                </keyboard>
+            
+                 <button class="nobut but-checkbox" onclick="$(this).toggleClass('checked');"><i class="icon checkbox"></i>Пропустить этот шаг</button>
+                
+            </div>
+            
+            <popup id="oferta-popup">
+            	<div>
+                    <h2>Согласие с выпуском виртуальной предоплаченной карты</h2>
+                    <p>Уважаемый пользователь платежной системы, нажимая "ОК" вы соглашаетесь, что на ваше имя будет выпущена виртуальная предоплаченная карта Казкома на сумму внесенных вами денежных средств. Данная карта становится недействительной сразу же после осуществления платежа и подлежит уничтожению.</p>
+                    <p>Также вы поручаете банку оплатить выбранную вами услугу. Для получения более подробной информации о виртальной предоплаченной карте, нажмите "Отмена" и перейдите в раздел "Информация", нажав на соответствующую пиктограмму или информацию на сайте www.kkb.kz, в разделе Платежные карты.<br />
+                    </p>
+                    <button class="but-gray">Отмена</button>
+                    <button class="but-yellow" onclick="$('#oferta-popup').fadeOut();" >OK</button>
+                </div>
+            </popup>
+        
+        </scene>
+        
+        <scene id="cheque">
+        
+            <h2>Спасибо! Заявка №194950 успешно оплачена</h2>
+                
+            <cheque>
+            	<ul>
+                    <li>
+                    	<label>108111</label>
+	                    Государственная пошлина, 
+                        зимаемая за выдачу
+                        документов, удостоверяющих
+                        личность
+                    </li>
+                    
+                    <li>
+                    	<label>308122</label>
+	                    Государственная пошлина,
+                        зимаемая за выдачу
+                        документов, Паспорта
+                    </li>
+                    
+                    <li>
+                    	<label>108111</label>
+	                    Государственная пошлина, 
+                        зимаемая за выдачу
+                        документов, удостоверяющих
+                        личность
+                    </li>
+                    
+                    <li class="summ">
+                    	<label>Сумма</label>
+	                    400 тенге
+                    </li>
+                </ul>
+            </cheque>
+            
+            
+            <div class="sdacha">
+            
+            	<i class="icon mobile-phone"></i>
+                
+                <div class="sdacha-info">
+                    Сдача <b>600</b> тенге<br />
+                    отправлена на номер<br /><br />
+                    <b>+7 707 799 18 09</b>
+                </div>
+                
+                <button class="but-green arrow right" onclick="$('#cheque').toggleClass('show'); $('#error-dialog').toggleClass('show');">Готово!</button>
+                
+            </div>
+            
+        
+        </scene>
+        
+        <scene id="error-dialog" class="center">
+        	<popup id="oferta-popup">
+            	<div>
+                    <h2>Терминал временно не работает!</h2>
+                    <br />
+                    Приносим свои извинения.<br />
+                    Скоро все заработает.<br />
+                    <br />
+                    Обратитесь в кассу для оплаты заявки<br /><br />
+                    <button class="but-yellow" onclick="$('#error-dialog').fadeOut();  $('#welcome').toggleClass('show');">OK</button>
+                </div>
+            </popup>   
+            
+        </scene>
+    
+    </main>
+    
+    
+    <timer></timer>
+    
+	<!---- FOOTER ---->
+   
+    <footer>
+    	<div style="width:80px;">
+	    	<button class="but-settings"><i class="icon settings"></i><cap>Settings</cap></button>
+        </div>    
+        <div class="copyright">
+        	&copy; 2014 PayPay.kz - платежная система, <br />АО Казкоммерцбанк, Все права защищены.
+        </div>
+        <div style="color:#ccc; width:265px; text-align:right; padding-right:5px;">
+           	<div style="text-align:left; display:inline-block;">Бостандыкский район<br />
+            	ID терминала: <b>9876</b>
+            </div>
+        </div>
+        <div style="background:url(_img/sprites.png) no-repeat -370px -150px; width:30px;"></div>
+        <div style="width:140px; text-align:right; padding-right:10px; font-size:13px">
+	        Служба поддержки<br />
+    	    <span style="font-size:20px;">8-800-<b>P<span style="letter-spacing:-1px;">A</span>YP<span style="letter-spacing:-1px;">A</span>Y</span></b>
+        </div>
+    </footer>
+    
+</body>
+<script>
+	var clock = $('clock').FlipClock({
+		clockFace: 'TwentyFourHourClock',
+		interval : 30000
+	});
+</script>
+</html>
+

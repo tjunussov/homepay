@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+@font-face {
+ font-family: OCRBBold;
+ src:url("ft32 Bold.ttf")
+}
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	min-height: 100% !important;
+	min-height: auto;
+	border: none;
+	
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family:Arial, Helvetica;
+	font-size:13px;
+	background-color:#333;
+	
+}
+
+ticket, tson,num,barcode,stat {
+	display:block;
+}
+
+ticket {
+	width:302px;
+	background:url(../_img/icon_tson_print.png) no-repeat 210px  7px #fff;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+ticket[isBooked]{
+	background:url(../_img/icon_tson_print.png) no-repeat 210px  7px, url(../_img/booked.png) no-repeat -2px  70px #fff;
+}
+ticket[isBooked] num{
+	margin-left:-20px;
+}
+
+ticket tson {
+	font-size:11pt;
+	line-height:16px;
+	padding:0 40px 0 10px;
+}
+
+ticket num {
+	font-family:OCRBBold; 
+	letter-spacing:-0.25em;
+	font-size:120pt;
+	text-align:center;
+	margin-left:-40px;
+	height:140px;
+	line-height:145px;
+}
+
+ticket ul {
+	margin:0;
+	list-style:none;
+	font-size:11pt;
+	padding-left:83px;
+}
+
+ticket ul li b {
+	margin-left:-83px;
+	text-align:right;
+	width:80px;
+	display:inline-block;
+	margin-right:3px;
+}
+
+ticket barcode {
+	background:url(../_img/barcode.png) no-repeat center 10px; 
+	text-align:center;
+	padding-top:60px;
+}
+
+ticket stat {
+	text-align:center;
+	font-size:11pt;
+	margin:8px auto 8px auto;
+	padding:3px 5px;
+	border:2px solid #000;
+	border-radius:20px;
+	font-weight:bold;
+	width:80%;
+}

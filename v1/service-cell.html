@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HOMEPAY</title>
+    <link href="_css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+	<h1>Введите номер удостоверения личности</h1>
+	
+	<div class="menu buttons">
+		<input id="numpad" type="text" value="" placeholder="Введите номер" style="text-align:right"/>
+	</div>
+	
+	<div class="menu numpad buttons" style="width:70%;">
+		<row>
+			<button onclick="numpad.value+=this.innerText">1</button>
+			<button onclick="numpad.value+=this.innerText">2</button>
+			<button onclick="numpad.value+=this.innerText">3</button>
+		</row>
+		<row>
+			<button onclick="numpad.value+=this.innerText">4</button>
+			<button onclick="numpad.value+=this.innerText">5</button>
+			<button onclick="numpad.value+=this.innerText">6</button>
+		</row>
+		<row>
+			<button onclick="numpad.value+=this.innerText">7</button>
+			<button onclick="numpad.value+=this.innerText">8</button>
+			<button onclick="numpad.value+=this.innerText">9</button>
+		</row>
+		<row>
+			<button onclick="numpad.value=numpad.value.substring(0,numpad.value.length-1)">&lt;</button>
+			<button onclick="numpad.value+=this.innerText">0</button>
+			<button onclick="numpad.value=''">CLR</button>
+		</row>
+	</div>
+	
+	<div class="buttons group">
+		<button onclick="nextScene('select-service');">Далее</button>
+		<button onclick="nextScene('select-service');">Отмена</button>
+	</div>
+
+</body>
+</html>
+

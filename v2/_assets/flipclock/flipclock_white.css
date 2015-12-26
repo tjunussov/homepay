@@ -1,0 +1,33 @@
+
+.flip-clock-wrapper ul li a div div.inn {
+  font-size: 55px; 
+  background-color: #000;
+}
+
+.flip-clock-wrapper ul li a div.up div.inn {
+  color: #fff;
+}
+
+.flip-clock-wrapper ul li a div.down div.inn {
+  color: #ccc;
+  
+}
+
+.flip-clock-wrapper ul {
+  margin: 3px 0;
+  width: 33px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 55px;
+  padding:0;
+  
+}
+
+.flip-clock-wrapper ul li a div.up:after {
+  top: 29px;
+}
+
+.flip-clock-wrapper ul:nth-child(3) {
+	margin-left:23px;
+	
+}

@@ -1,0 +1,56 @@
+.epay {
+	text-align:left;
+}
+
+.epay .logo {
+	background:url(../_img/epay.egov/pay_egov_icon.png) no-repeat right;
+	height:80px;
+	padding-right:55%;
+	padding-top:60px;
+	margin-top:-50px;
+	margin-bottom:10px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.epay .logo b {
+	background-color:#ffe958;
+	padding:0px 7px;
+	color:#333;
+}
+
+
+.epay .warn {
+	margin-bottom:10px;
+	background: url(../_img/icon_warn.png) no-repeat 20px 12px #FFE958;
+	padding:10px 25px 10px 50px;
+	border-radius:15px;
+}
+
+.epay  h1{
+	font-size:22pt;
+}
+.epay .info_table h3 {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.epay .info_table {
+	margin-bottom:10px;
+}
+.epay .info_table table {
+	width:100%;
+	border-collapse:collapse;
+	border:1px solid #ccc;
+}
+.epay .info_table table td,.epay .info_table table th  {
+	border:1px solid #ccc;
+}
+.epay .info_table td {
+	padding:3px 5px;
+}
+.epay .info_table th {
+	background-color:#ddd;
+	padding:3px 5px;
+	width:35%;
+	vertical-align:top;
+}
